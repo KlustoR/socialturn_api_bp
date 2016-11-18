@@ -1,0 +1,40 @@
+FORMAT: 1A
+HOST: http://api.socialturn.nl/
+
+# Socialturn API
+
+This document describes the REST API and resources provided by Socialturn. 
+The REST APIs are for developers who want to integrate Socialturn into their application and for administrators who want to script interactions with the Socialturn server.
+Socialturn's REST APIs provide access to resources (data entities) via URI paths. 
+To use a REST API, your application will make an HTTP request and parse the response. 
+The response format is JSON. 
+Your methods will be the standard HTTP methods like GET, PUT, POST and DELETE.
+Because the REST API is based on open standards, you can use any web development language to access the API.
+
+## Storecard [/storecard]
+
+### Storecard Distribute [PUT]
++ Request (application/json)
+    + Headers
+    
+            X-API-TOKEN: 0gwook0wwkowkws84wwcscwg0k4wcwcwo0swsgc4
+            
++ Attributes
+
+    + first_name, (string)
+    + last_name, (string)
+    + nickname (optional, string)
+    + email (optional, string)
+    + phone (optional, string)
+    + gender (optional, string)
+    + birthdate (optional, string)
+
++ Response 200 (application/json)
+
+        [
+            {
+                "success": true,
+                "email": true,
+                "sms": false
+            }
+        ]
